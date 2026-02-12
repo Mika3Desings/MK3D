@@ -3,99 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MK3D - Impresión 3D Maker</title>
+    <title>MK3D - Futurista</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
-        body { font-family: 'Inter', sans-serif; }
-        
-        /* Imagen de fondo de Impresora 3D Real Maker */
+        /* Importamos una fuente futurista similar a Armstrong */
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Inter:wght@400;700&display=swap');
+
+        :root {
+            --neon-blue: #00d2ff;
+            --neon-shadow: rgba(0, 210, 255, 0.7);
+        }
+
+        body { font-family: 'Inter', sans-serif; background-color: #000; }
+
+        /* Estilo de la tipografía principal */
+        .font-armstrong {
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: -2px;
+            text-transform: uppercase;
+        }
+
+        /* Degradado Blanco/Gris/Azul con Neón */
+        .text-gradient-neon {
+            background: linear-gradient(to bottom, #ffffff 20%, #a1a1a1 50%, #00d2ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 10px var(--neon-shadow));
+        }
+
         .hero-bg {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
                         url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1500');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             min-height: 100vh;
         }
+
+        /* Borde neón para botones */
+        .btn-neon {
+            border: 2px solid var(--neon-blue);
+            box-shadow: 0 0 15px var(--neon-shadow);
+            transition: all 0.3s ease;
+        }
+        .btn-neon:hover {
+            background-color: var(--neon-blue);
+            color: #000;
+            box-shadow: 0 0 30px var(--neon-blue);
+        }
     </style>
 </head>
-<body class="bg-black text-white">
+<body class="text-white">
 
-    <nav class="fixed w-full z-50 p-6 flex justify-between items-center bg-black/40 backdrop-blur-md border-b border-white/10">
-        <div class="text-3xl font-black tracking-tighter text-white flex items-center">
-            <span class="text-blue-500 text-shadow-glow">MK</span>3D
+    <nav class="fixed w-full z-50 p-6 flex justify-between items-center bg-black/60 backdrop-blur-md border-b border-white/10">
+        <div class="text-3xl font-armstrong">
+            <span class="text-white">MK</span><span class="text-blue-500">3D</span>
         </div>
         
-        <div class="hidden md:flex space-x-8 font-semibold text-xs uppercase tracking-widest">
+        <div class="hidden md:flex space-x-8 font-bold text-[10px] uppercase tracking-[0.3em]">
             <a href="#" class="hover:text-blue-400 transition">Quienes Somos</a>
-            <a href="#" class="hover:text-blue-400 transition">Origenes</a>
-            <a href="#productos" class="hover:text-blue-400 transition">Productos</a>
-            <a href="#contacto" class="hover:text-blue-400 transition">Contacto</a>
+            <a href="#" class="hover:text-blue-400 transition">Servicios</a>
+            <a href="#" class="hover:text-blue-400 transition">Contacto</a>
         </div>
 
-        <div class="flex items-center space-x-4">
-            <a href="https://instagram.com" class="text-xl hover:text-blue-400"><i class="fab fa-instagram"></i></a>
-            <a href="#contacto" class="bg-blue-600 px-6 py-2 rounded-lg font-bold uppercase text-xs hover:bg-blue-700 transition shadow-lg shadow-blue-500/20">Cotizar</a>
-        </div>
+        <a href="#" class="btn-neon px-6 py-2 rounded-lg font-black uppercase text-xs">Cotizar</a>
     </nav>
 
     <section class="hero-bg flex flex-col justify-center items-center text-center px-6">
         
-        <div class="max-w-4xl">
-            <span class="bg-blue-900/40 text-blue-400 px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] mb-6 inline-block border border-blue-500/30">
-                Open Source 3D Printing
-            </span>
-            
-            <h2 class="text-6xl md:text-8xl font-black mb-8 leading-tight tracking-tighter">
-                Tu imaginación <br> en <br> <span class="text-blue-500">3D</span>
+        <div class="max-w-5xl">
+            <h2 class="font-armstrong text-7xl md:text-9xl leading-none mb-4 text-gradient-neon">
+                Tu imaginación <br> en 3D
             </h2>
-
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
-                <a href="#contacto" class="border-2 border-white/30 rounded-full py-3 px-6 hover:bg-white hover:text-black transition font-bold uppercase text-[10px] tracking-widest">Imprimir</a>
-                <a href="#contacto" class="border-2 border-white/30 rounded-full py-3 px-6 hover:bg-white hover:text-black transition font-bold uppercase text-[10px] tracking-widest">Service</a>
-                <a href="#contacto" class="border-2 border-white/30 rounded-full py-3 px-6 hover:bg-white hover:text-black transition font-bold uppercase text-[10px] tracking-widest">Diseño</a>
-                <a href="#contacto" class="border-2 border-white/30 rounded-full py-3 px-6 hover:bg-white hover:text-black transition font-bold uppercase text-[10px] tracking-widest">+ Info</a>
-            </div>
-        </div>
-
-    </section>
-
-    <section id="productos" class="py-24 bg-zinc-950 border-t border-white/5">
-        <div class="container mx-auto px-6 text-center">
-            <h3 class="text-4xl font-black mb-6 uppercase tracking-tighter">Productos</h3>
-            <p class="text-zinc-500 max-w-2xl mx-auto text-sm leading-relaxed">
-                Desde prototipos funcionales hasta figuras de alta resolución. 
-                Utilizamos materiales de primera calidad para garantizar resultados profesionales.
-            </p>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mt-16">
-                <div class="group cursor-pointer">
-                    <div class="bg-zinc-900 aspect-square rounded-2xl border border-white/5 overflow-hidden group-hover:border-blue-500/50 transition">
-                        <img src="https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&q=80&w=500" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                    </div>
-                    <h4 class="mt-4 font-bold uppercase text-sm tracking-widest">Modelado</h4>
-                </div>
-                <div class="group cursor-pointer">
-                    <div class="bg-zinc-900 aspect-square rounded-2xl border border-white/5 overflow-hidden group-hover:border-blue-500/50 transition">
-                        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=500" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                    </div>
-                    <h4 class="mt-4 font-bold uppercase text-sm tracking-widest">Insumos</h4>
-                </div>
-                <div class="group cursor-pointer">
-                    <div class="bg-zinc-900 aspect-square rounded-2xl border border-white/5 overflow-hidden group-hover:border-blue-500/50 transition">
-                        <img src="https://images.unsplash.com/photo-1631451095765-2c91616fc9e6?auto=format&fit=crop&q=80&w=500" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                    </div>
-                    <h4 class="mt-4 font-bold uppercase text-sm tracking-widest">Prototipado</h4>
-                </div>
+            <p class="text-gray-400 tracking-[0.5em] uppercase text-xs mt-4">
+                High Performance Printing • Community Driven
+            </p>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16">
+                <a href="#" class="border border-white/20 rounded-full py-4 px-2 hover:border-blue-500 transition font-bold uppercase text-[9px] tracking-widest bg-white/5">Imprimir</a>
+                <a href="#" class="border border-white/20 rounded-full py-4 px-2 hover:border-blue-500 transition font-bold uppercase text-[9px] tracking-widest bg-white/5">Service</a>
+                <a href="#" class="border border-white/20 rounded-full py-4 px-2 hover:border-blue-500 transition font-bold uppercase text-[9px] tracking-widest bg-white/5">Diseño</a>
+                <a href="#" class="border border-white/20 rounded-full py-4 px-2 hover:border-blue-500 transition font-bold uppercase text-[9px] tracking-widest bg-white/5">+ Info</a>
             </div>
         </div>
-    </section>
 
-    <footer id="contacto" class="py-12 border-t border-white/5 text-center text-zinc-600 text-[10px] uppercase tracking-[0.3em]">
-        <p>&copy; 2026 MK3D - Community Powered</p>
-    </footer>
+    </section>
 
 </body>
 </html>
