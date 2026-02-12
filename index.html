@@ -3,37 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MK3D - Impresión de Alto Rendimiento</title>
+    <title>MK3D - Impresión Pro</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Importamos Orbitron como reemplazo web de Armstrong */
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Inter:wght@400;700&display=swap');
 
         :root {
-            --mk3d-gray: #737373;   /* Tu Gris del PDF */
-            --mk3d-blue: #122137;   /* Tu Azul del PDF */
-            --neon-blue: #00d2ff;   /* Azul para el brillo neón */
+            --mk3d-gray: #737373;   /* Gris del PDF */
+            --mk3d-blue: #122137;   /* Azul del PDF */
+            --neon-cyan: #00f2ff;   /* Color para el efecto neón */
         }
 
         body { font-family: 'Inter', sans-serif; background-color: #000; }
+        .font-armstrong { font-family: 'Orbitron', sans-serif; text-transform: uppercase; }
 
-        .font-armstrong { 
-            font-family: 'Orbitron', sans-serif; 
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        /* Efecto NEÓN para el logo de arriba */
+        .logo-neon {
+            color: #fff;
+            text-shadow: 
+                0 0 5px #fff,
+                0 0 10px var(--neon-cyan),
+                0 0 20px var(--neon-cyan),
+                0 0 40px var(--neon-cyan);
         }
 
-        /* Degradado basado en tu PDF: Blanco -> Gris Maker -> Azul MK3D */
         .text-gradient-mk3d {
-            background: linear-gradient(to bottom, #ffffff 20%, var(--mk3d-gray) 50%, var(--neon-blue) 100%);
+            background: linear-gradient(to bottom, #ffffff 30%, var(--mk3d-gray) 60%, var(--neon-cyan) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 10px rgba(0, 210, 255, 0.5));
         }
 
         .hero-bg {
-            background: linear-gradient(rgba(18, 33, 55, 0.85), rgba(0, 0, 0, 0.9)), 
+            background: linear-gradient(rgba(18, 33, 55, 0.8), rgba(0, 0, 0, 0.9)), 
                         url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1500');
             background-size: cover;
             background-position: center;
@@ -41,34 +43,27 @@
             min-height: 100vh;
         }
 
-        .btn-mk3d {
-            border: 2px solid var(--neon-blue);
-            box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
-            transition: all 0.3s ease;
-            background: rgba(18, 33, 55, 0.5);
-        }
-
-        .btn-mk3d:hover {
-            background: var(--neon-blue);
-            color: #000;
-            box-shadow: 0 0 30px var(--neon-blue);
+        .nav-glass {
+            background: rgba(18, 33, 55, 0.7);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
     </style>
 </head>
 <body class="text-white">
 
-    <nav class="fixed w-full z-50 p-6 flex justify-between items-center bg-[#122137]/80 backdrop-blur-md border-b border-white/10">
-        <div class="text-3xl font-armstrong font-black">
-            <span class="text-white">MK</span><span class="text-blue-400">3D</span>
+    <nav class="fixed w-full z-50 p-6 flex justify-between items-center nav-glass">
+        <div class="text-3xl font-armstrong logo-neon">
+            MK3D
         </div>
         
-        <div class="hidden md:flex space-x-8 font-bold text-[10px] uppercase tracking-[0.3em] text-gray-300">
-            <a href="#" class="hover:text-blue-400 transition">Quienes Somos</a>
-            <a href="#" class="hover:text-blue-400 transition">Origenes</a>
-            <a href="#" class="hover:text-blue-400 transition">Servicios</a>
+        <div class="hidden md:flex space-x-8 font-bold text-[10px] uppercase tracking-[0.3em]">
+            <a href="#" class="hover:text-cyan-400 transition">Quienes Somos</a>
+            <a href="#" class="hover:text-cyan-400 transition">Servicios</a>
+            <a href="#" class="hover:text-cyan-400 transition">Contacto</a>
         </div>
 
-        <a href="#" class="btn-mk3d px-6 py-2 rounded-lg font-black uppercase text-xs">Cotizar</a>
+        <a href="#" class="border-2 border-cyan-500 shadow-[0_0_15px_rgba(0,242,255,0.4)] px-6 py-2 rounded-lg font-black uppercase text-xs hover:bg-cyan-500 hover:text-black transition">Cotizar</a>
     </nav>
 
     <section class="hero-bg flex flex-col justify-center items-center text-center px-6">
@@ -77,15 +72,15 @@
                 Tu imaginación <br> en 3D
             </h2>
             
-            <p class="text-gray-400 tracking-[0.6em] uppercase text-[10px] mt-8 mb-12">
-                Armstrong Typography • Community Driven • Buenos Aires
+            <p class="text-cyan-400/60 tracking-[0.6em] uppercase text-[10px] font-bold mt-8">
+                Buenos Aires • Est. 2026 • High Performance
             </p>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
-                <a href="#" class="border border-white/20 rounded-full py-4 px-2 hover:border-blue-500 transition font-bold uppercase text-[9px] tracking-widest bg-white/5">Imprimir</a>
-                <a href="#" class="border border-white/20 rounded-full py-4 px-2 hover:border-blue-500 transition font-bold uppercase text-[9px] tracking-widest bg-white/5">Service</a>
-                <a href="#" class="border border-white/20 rounded-full py-4 px-2 hover:border-blue-500 transition font-bold uppercase text-[9px] tracking-widest bg-white/5">Diseño</a>
-                <a href="#" class="border border-white/20 rounded-full py-4 px-2 hover:border-blue-500 transition font-bold uppercase text-[9px] tracking-widest bg-white/5">+ Info</a>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16">
+                <a href="#" class="border border-white/10 rounded-full py-4 px-2 hover:border-cyan-500 transition font-bold uppercase text-[9px] tracking-widest bg-white/5">Imprimir</a>
+                <a href="#" class="border border-white/10 rounded-full py-4 px-2 hover:border-cyan-500 transition font-bold uppercase text-[9px] tracking-widest bg-white/5">Service</a>
+                <a href="#" class="border border-white/10 rounded-full py-4 px-2 hover:border-cyan-500 transition font-bold uppercase text-[9px] tracking-widest bg-white/5">Diseño</a>
+                <a href="#" class="border border-white/10 rounded-full py-4 px-2 hover:border-cyan-500 transition font-bold uppercase text-[9px] tracking-widest bg-white/5">+ Info</a>
             </div>
         </div>
     </section>
